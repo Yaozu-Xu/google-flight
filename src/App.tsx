@@ -1,26 +1,18 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React from 'react'
+import './App.css'
+import { FlightSearch } from './components/FlightSearch.component'
+import { flight, flights } from './api/mock'
+import { FlightList } from './components/FlightList.component'
+import { FlightDateRange } from './components/FlightDateRange.component'
 
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <FlightSearch />
+      <FlightDateRange />
+      <FlightList flights={flights} />
     </div>
-  );
+  )
 }
 
-export default App;
+export default App
