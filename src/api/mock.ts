@@ -1,12 +1,15 @@
-import { Flight } from '../components/FlightCard.component'
-const nearByPorts = {
+export const nearByPorts = {
   status: true,
-  timestamp: 1692098479952,
+  timestamp: 1726960900175,
   data: {
     current: {
       skyId: 'BOM',
       entityId: '95673320',
-      presentation: { title: 'Mumbai', suggestionTitle: 'Mumbai (BOM)', subtitle: 'India' },
+      presentation: {
+        title: 'Mumbai',
+        suggestionTitle: 'Mumbai (BOM)',
+        subtitle: 'India',
+      },
       navigation: {
         entityId: '95673320',
         entityType: 'AIRPORT',
@@ -17,12 +20,269 @@ const nearByPorts = {
           flightPlaceType: 'AIRPORT',
           localizedName: 'Mumbai',
         },
-        relevantHotelParams: { entityId: '27539520', entityType: 'CITY', localizedName: 'Mumbai' },
+        relevantHotelParams: {
+          entityId: '27539520',
+          entityType: 'CITY',
+          localizedName: 'Mumbai',
+        },
       },
     },
-    nearby: [],
-    recent: [],
+    nearby: [
+      {
+        presentation: {
+          title: 'Pune',
+          suggestionTitle: 'Pune (PNQ)',
+          subtitle: 'India',
+        },
+        navigation: {
+          entityId: '128668941',
+          entityType: 'AIRPORT',
+          localizedName: 'Pune',
+          relevantFlightParams: {
+            skyId: 'PNQ',
+            entityId: '128668941',
+            flightPlaceType: 'AIRPORT',
+            localizedName: 'Pune',
+          },
+          relevantHotelParams: {
+            entityId: '81977372',
+            entityType: 'CITY',
+            localizedName: 'Pune',
+          },
+        },
+      },
+      {
+        presentation: {
+          title: 'Indira Gandhi International ',
+          suggestionTitle: 'Indira Gandhi International  (DEL)',
+          subtitle: 'India',
+        },
+        navigation: {
+          entityId: '95673498',
+          entityType: 'AIRPORT',
+          localizedName: 'Indira Gandhi International ',
+          relevantFlightParams: {
+            skyId: 'DEL',
+            entityId: '95673498',
+            flightPlaceType: 'AIRPORT',
+            localizedName: 'Indira Gandhi International ',
+          },
+          relevantHotelParams: {
+            entityId: '27540706',
+            entityType: 'CITY',
+            localizedName: 'New Delhi',
+          },
+        },
+      },
+      {
+        presentation: {
+          title: 'Bengaluru',
+          suggestionTitle: 'Bengaluru (BLR)',
+          subtitle: 'India',
+        },
+        navigation: {
+          entityId: '95673351',
+          entityType: 'AIRPORT',
+          localizedName: 'Bengaluru',
+          relevantFlightParams: {
+            skyId: 'BLR',
+            entityId: '95673351',
+            flightPlaceType: 'AIRPORT',
+            localizedName: 'Bengaluru',
+          },
+          relevantHotelParams: {
+            entityId: '27539471',
+            entityType: 'CITY',
+            localizedName: 'Bengaluru',
+          },
+        },
+      },
+      {
+        presentation: {
+          title: 'Goa',
+          suggestionTitle: 'Goa (GOI)',
+          subtitle: 'India',
+        },
+        navigation: {
+          entityId: '95790306',
+          entityType: 'AIRPORT',
+          localizedName: 'Goa',
+          relevantFlightParams: {
+            skyId: 'GOI',
+            entityId: '95790306',
+            flightPlaceType: 'AIRPORT',
+            localizedName: 'Goa',
+          },
+          relevantHotelParams: {
+            entityId: '27541888',
+            entityType: 'CITY',
+            localizedName: 'Marmagao',
+          },
+        },
+      },
+      {
+        presentation: {
+          title: 'Ahmedabad',
+          suggestionTitle: 'Ahmedabad (AMD)',
+          subtitle: 'India',
+        },
+        navigation: {
+          entityId: '95673366',
+          entityType: 'AIRPORT',
+          localizedName: 'Ahmedabad',
+          relevantFlightParams: {
+            skyId: 'AMD',
+            entityId: '95673366',
+            flightPlaceType: 'AIRPORT',
+            localizedName: 'Ahmedabad',
+          },
+          relevantHotelParams: {
+            entityId: '27536554',
+            entityType: 'CITY',
+            localizedName: 'Ahmedabad',
+          },
+        },
+      },
+    ],
   },
+}
+
+export const searchPorts = {
+  status: true,
+  timestamp: 1726964220205,
+  data: [
+    {
+      skyId: 'LOND',
+      entityId: '27544008',
+      presentation: { title: 'London', suggestionTitle: 'London (Any)', subtitle: 'United Kingdom' },
+      navigation: {
+        entityId: '27544008',
+        entityType: 'CITY',
+        localizedName: 'London',
+        relevantFlightParams: { skyId: 'LOND', entityId: '27544008', flightPlaceType: 'CITY', localizedName: 'London' },
+        relevantHotelParams: { entityId: '27544008', entityType: 'CITY', localizedName: 'London' },
+      },
+    },
+    {
+      skyId: 'LHR',
+      entityId: '95565050',
+      presentation: { title: 'London Heathrow', suggestionTitle: 'London Heathrow (LHR)', subtitle: 'United Kingdom' },
+      navigation: {
+        entityId: '95565050',
+        entityType: 'AIRPORT',
+        localizedName: 'London Heathrow',
+        relevantFlightParams: {
+          skyId: 'LHR',
+          entityId: '95565050',
+          flightPlaceType: 'AIRPORT',
+          localizedName: 'London Heathrow',
+        },
+        relevantHotelParams: { entityId: '27544008', entityType: 'CITY', localizedName: 'London' },
+      },
+    },
+    {
+      skyId: 'LGW',
+      entityId: '95565051',
+      presentation: { title: 'London Gatwick', suggestionTitle: 'London Gatwick (LGW)', subtitle: 'United Kingdom' },
+      navigation: {
+        entityId: '95565051',
+        entityType: 'AIRPORT',
+        localizedName: 'London Gatwick',
+        relevantFlightParams: {
+          skyId: 'LGW',
+          entityId: '95565051',
+          flightPlaceType: 'AIRPORT',
+          localizedName: 'London Gatwick',
+        },
+        relevantHotelParams: { entityId: '27544008', entityType: 'CITY', localizedName: 'London' },
+      },
+    },
+    {
+      skyId: 'STN',
+      entityId: '95565052',
+      presentation: { title: 'London Stansted', suggestionTitle: 'London Stansted (STN)', subtitle: 'United Kingdom' },
+      navigation: {
+        entityId: '95565052',
+        entityType: 'AIRPORT',
+        localizedName: 'London Stansted',
+        relevantFlightParams: {
+          skyId: 'STN',
+          entityId: '95565052',
+          flightPlaceType: 'AIRPORT',
+          localizedName: 'London Stansted',
+        },
+        relevantHotelParams: { entityId: '27544008', entityType: 'CITY', localizedName: 'London' },
+      },
+    },
+    {
+      skyId: 'LTN',
+      entityId: '95565053',
+      presentation: { title: 'London Luton', suggestionTitle: 'London Luton (LTN)', subtitle: 'United Kingdom' },
+      navigation: {
+        entityId: '95565053',
+        entityType: 'AIRPORT',
+        localizedName: 'London Luton',
+        relevantFlightParams: {
+          skyId: 'LTN',
+          entityId: '95565053',
+          flightPlaceType: 'AIRPORT',
+          localizedName: 'London Luton',
+        },
+        relevantHotelParams: { entityId: '27544008', entityType: 'CITY', localizedName: 'London' },
+      },
+    },
+    {
+      skyId: 'LCY',
+      entityId: '95565047',
+      presentation: { title: 'London City', suggestionTitle: 'London City (LCY)', subtitle: 'United Kingdom' },
+      navigation: {
+        entityId: '95565047',
+        entityType: 'AIRPORT',
+        localizedName: 'London City',
+        relevantFlightParams: {
+          skyId: 'LCY',
+          entityId: '95565047',
+          flightPlaceType: 'AIRPORT',
+          localizedName: 'London City',
+        },
+        relevantHotelParams: { entityId: '27544008', entityType: 'CITY', localizedName: 'London' },
+      },
+    },
+    {
+      skyId: 'SEN',
+      entityId: '95565054',
+      presentation: { title: 'London Southend', suggestionTitle: 'London Southend (SEN)', subtitle: 'United Kingdom' },
+      navigation: {
+        entityId: '95565054',
+        entityType: 'AIRPORT',
+        localizedName: 'London Southend',
+        relevantFlightParams: {
+          skyId: 'SEN',
+          entityId: '95565054',
+          flightPlaceType: 'AIRPORT',
+          localizedName: 'London Southend',
+        },
+        relevantHotelParams: { entityId: '27544008', entityType: 'CITY', localizedName: 'London' },
+      },
+    },
+    {
+      skyId: 'YXU',
+      entityId: '95673743',
+      presentation: { title: 'London', suggestionTitle: 'London (YXU)', subtitle: 'Canada' },
+      navigation: {
+        entityId: '95673743',
+        entityType: 'AIRPORT',
+        localizedName: 'London',
+        relevantFlightParams: {
+          skyId: 'YXU',
+          entityId: '95673743',
+          flightPlaceType: 'AIRPORT',
+          localizedName: 'London',
+        },
+        relevantHotelParams: { entityId: '27537437', entityType: 'CITY', localizedName: 'London' },
+      },
+    },
+  ],
 }
 
 export const ports = {
