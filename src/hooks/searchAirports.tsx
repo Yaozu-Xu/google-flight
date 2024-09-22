@@ -41,7 +41,6 @@ const useSearchAirports = ({ query = 'London', locale = 'en-US' }) => {
       } catch (err: any) {
         // use mock data when error
         const from = searchPorts?.data?.map((_) => {
-          console.log(_)
           return {
             title: _.presentation.suggestionTitle,
             entityId: _.navigation.entityId,

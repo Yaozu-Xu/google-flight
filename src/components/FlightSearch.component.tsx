@@ -17,8 +17,19 @@ const StyledSearchWrapper = styled.div`
     flex-direction: column;
   }
 `
+interface FlightSearchProps {
+  setOriginEntityId: (value: string) => void
+  setDestinationSkyId: (value: string) => void
+  setDestinationEntityId: (value: string) => void
+  setOriginSkyId: (value: string) => void
+}
 
-export const FlightSearch = () => {
+export const FlightSearch = ({
+  setOriginEntityId,
+  setDestinationSkyId,
+  setDestinationEntityId,
+  setOriginSkyId,
+}: FlightSearchProps) => {
   const [toAirport, setToAirport] = useState<string>('')
   const debouncedToAirport = useDebounce(toAirport, 400)
   const { airports: fromAirports, loading: fromLoading } = useNearbyAirports({
@@ -26,7 +37,6 @@ export const FlightSearch = () => {
     lng: 72.85846156046128,
     locale: 'en-US',
   })
-
   const { airports: toAirports, loading: toLoading } = useSearchAirports({ query: debouncedToAirport, locale: 'en-US' })
 
   return (
@@ -37,6 +47,10 @@ export const FlightSearch = () => {
           loading={fromLoading}
           getOptionLabel={(option: any) => option?.title || ''}
           sx={{ width: 300 }}
+          onChange={(event: any, value) => {
+            setOriginEntityId(value?.entityId)
+            setOriginSkyId(value?.skyId)
+          }}
           noOptionsText={fromLoading ? 'Loading airports...' : 'No options'}
           renderInput={(params) => (
             <TextField
@@ -61,10 +75,14 @@ export const FlightSearch = () => {
           getOptionLabel={(option: any) => option.title}
           noOptionsText={toLoading ? 'Loading airports...' : 'No options'}
           sx={{ width: 300 }}
+          onChange={(event: any, value) => {
+            setDestinationEntityId(value?.entityId)
+            setDestinationSkyId(value?.skyId)
+          }}
           renderInput={(params) => (
             <TextField
               {...params}
-              label="From"
+              label="To"
               onChange={(e: any) => {
                 setToAirport(e.target?.value)
               }}

@@ -15,15 +15,29 @@ const StyledRangeWrapper = styled.div`
     flex-direction: column;
   }
 `
-export const FlightDateRange = () => {
+
+interface FlightDateRangeProps {
+  setDate: (value: string) => void
+  setReturnDate: (value: string) => void
+}
+
+export const FlightDateRange = ({ setDate, setReturnDate }: FlightDateRangeProps) => {
   return (
     <StyledRangeWrapper>
       <LocalizationProvider dateAdapter={AdapterDayjs}>
         <FormControl sx={{ m: 1, minWidth: 130 }}>
-          <DatePicker label="Select a date" value={dayjs('2022-04-17')} onChange={() => {}} />
+          <DatePicker
+            label="Select a date"
+            value={dayjs(dayjs().format('YYYY-MM-DD'))}
+            onChange={(e, value: any) => setDate(value.format('YYYY-MM-DD'))}
+          />
         </FormControl>
         <FormControl sx={{ m: 1, minWidth: 130 }}>
-          <DatePicker label="Select a date" value={dayjs('2022-04-17')} onChange={() => {}} />
+          <DatePicker
+            label="Select a date"
+            value={dayjs(dayjs().add(1, 'day').format('YYYY-MM-DD'))}
+            onChange={(e, value: any) => setReturnDate(value.format('YYYY-MM-DD'))}
+          />
         </FormControl>
       </LocalizationProvider>
     </StyledRangeWrapper>

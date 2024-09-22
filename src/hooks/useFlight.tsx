@@ -16,11 +16,12 @@ export const useFlightSearch = ({
   market = 'en-US',
   countryCode = 'US',
 }) => {
-  const [flights, setFlights] = useState({})
+  const [flights, setFlights] = useState([])
   const [loading, setLoading] = useState(false)
   const [error, setError] = useState(null)
 
   useEffect(() => {
+    if (!originSkyId || !destinationSkyId || !originEntityId || !destinationEntityId || !date || !returnDate) return
     const fetchFlights = async () => {
       setLoading(true)
       setError(null)
@@ -41,8 +42,9 @@ export const useFlightSearch = ({
           throw new Error('Error fetching flight data')
         }
 
-        const data = await response.json()
-        setFlights(data)
+        const res = await response.json()
+        console.log(res)
+        setFlights(res?.data?.itineraries)
       } catch (err: any) {
         setError(err.message)
       } finally {
